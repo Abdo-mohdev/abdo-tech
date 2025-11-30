@@ -26,7 +26,6 @@
             </div>
             <nav class="animate__animated animate__fadeInDown">
                 <a href="#about">About</a>
-                <a href="#work">Work</a>
                 <a href="#services">Services</a>
                 
             </nav>
@@ -43,7 +42,7 @@
         <div class="header-img">
             <img src="/images/banner.webp"  alt="Header Image">
         </div>
-        <button class="btn-contact">See my magic</button>
+        <button class="btn-projects" id="work">See my magic</button>
 
         <div class="infinite-wrapper">
             <div class="group">
@@ -128,7 +127,7 @@
 
 
 
-    <section class="projects" id="work">
+    <section class="projects" id="projects">
 
         <h1 class="projects-title">
             My <span>Projects</span>
@@ -325,6 +324,12 @@
     const contactSection = document.querySelector('.contact-section');
     contactBtn.addEventListener('click', (e) => {
         contactSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const projectsBtn = document.getElementById('work');
+    const projectsSection = document.querySelector('.projects');
+    projectsBtn.addEventListener('click', (e) => {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
     });
 </script>
 
