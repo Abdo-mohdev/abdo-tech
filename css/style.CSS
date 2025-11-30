@@ -945,9 +945,7 @@ header .group {
         padding: 8px 12px;
     }
 
-    .navbar nav {
-        display: none;
-    }
+
 
     .contact-section .img img {
         width: 400px;
@@ -960,7 +958,12 @@ header .group {
         margin-top: 24%;
         padding: 0 15px;
     }
-
+    .shapes-container img{
+        width: 100px;
+    }
+    .rings {
+        display: none;
+    }
     header h1 {
         font-size: 30px;
     }
