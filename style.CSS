@@ -442,7 +442,7 @@ header .group {
     content: "";
     position: absolute;
     inset: 0;
-    background: url(about-2.jpg) center/cover no-repeat;
+    background: url(about-2.webp) center/cover no-repeat;
     transition: transform 0.4s ease;
     transform: scale(1);
     filter: brightness(0.5);
@@ -552,12 +552,15 @@ header .group {
 .project-card h3 {
     font-size: 20px;
     color: var(--color-text-primary);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .project-card p {
     font-size: 16px;
     color: var(--color-text-secondary);
+}
+.project-card span {
+    color: var(--color-accent-3);
 }
 
 .project-card a {

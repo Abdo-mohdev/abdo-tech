@@ -25,21 +25,23 @@
                 <h2>Vbdou</h2>
             </div>
             <nav class="animate__animated animate__fadeInDown">
-                <a href="#">About</a>
-                <a href="#">Work</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#services">Services</a>
+                
             </nav>
 
-            <button class="contact animate__animated animate__fadeInRight">Hire me</button>
+            <button class="contact animate__animated animate__fadeInRight" id="contact-btn">Hire me</button>
         </div>
     </div>
 
 
-    <header>
+    <header class="animate__animated animate__fadeIn">
         <h1>👋 Hello, I'm <span>Abdo Mohamed</span></h1>
         <h3>Frontend Developer</h3>
         <p>Creating interactive web experiences.</p>
         <div class="header-img">
-            <img src="banner.png" alt="Header Image">
+            <img src="banner.webp"  alt="Header Image">
         </div>
         <button class="btn-contact">See my magic</button>
 
@@ -74,7 +76,7 @@
         </div>
 
         <div class="shapes-container">
-            <img src="shape1.png" class="shape shape1">
+            <img src="shape1.webp" class="shape shape1">
             <img src="shape2.png" class="shape shape2">
             <img src="shape3.png" class="shape shape3">
             <img src="shape4.png" class="shape shape4">
@@ -86,10 +88,10 @@
 
 
 
-    <section class="about">
+    <section class="about " id="about">
         <div class="box ">
             <div class="box-content box-1" data-aos="fade-right">
-                <img src="about-1.png" alt="About Image" style="width: 150px;">
+                <img src="about-1.webp" alt="About Image" style="width: 150px;">
                 <div class="text">
                     <h1>I'm Abdo Mohamed</h1>
                     <p>I'm a Frontend Developer and UI/UX Designer with a passion for creating engaging and user-friendly digital experiences.</p>
@@ -126,7 +128,7 @@
 
 
 
-    <section class="projects" id="projects">
+    <section class="projects" id="work">
 
         <h1 class="projects-title">
             My <span>Projects</span>
@@ -136,38 +138,38 @@
             
             <!-- Project Card -->
             <div class="project-card">
-                <img src="about-2.jpg" width="100%" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Description of Project 1.</p>
-                <p>Technologies used: HTML, CSS, JavaScript</p>
-                <a href="#">View Project ↗</a>
+                <img src="project1.png" width="100%" alt="Project 1">
+                <h3>ShopHub</h3>
+                <p>ShopHub is a web application that allows users to buy products online & manage their shopping cart.</p>
+                <p><span>Technologies used: HTML, CSS, JavaScript & API Integration</span></p>
+                <a href="https://shophub-ecommerce-orcin.vercel.app/" target="_blank">View Project ↗</a>
             </div>
 
                     <!-- Project Card -->
             <div class="project-card">
-                <img src="about-2.jpg" width="100%" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Description of Project 1.</p>
-                <p>Technologies used: HTML, CSS, JavaScript</p>
-                <a href="#">View Project ↗</a>
+                <img src="project2.png" width="100%" alt="Project 1">
+                <h3>Movie Land</h3>
+                <p>It's a web application that allows users to search for movies and view their details.</p>
+                <p><span>Technologies used: HTML, CSS, JavaScript & API Integration</span></p>
+                <a href="https://vercel.com/abdos-projects-e8fd4da4/movie-land" target="_blank">View Project ↗</a>
             </div>
 
                     <!-- Project Card -->
             <div class="project-card">
-                <img src="about-2.jpg" width="100%" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Description of Project 1.</p>
-                <p>Technologies used: HTML, CSS, JavaScript</p>
-                <a href="#">View Project ↗</a>
+                <img src="project3.png" width="100%" alt="Project 1">
+                <h3>Silent Space</h3>
+                <p>It's a modern responsive & landing page with minimal design, maximum impact & dynamic experience.</p>
+                <p><span>Technologies used: HTML, CSS, JavaScript and animation</span></p>
+                <a href="https://silent-space-alpha.vercel.app/" target="_blank">View Project ↗</a>
             </div>
 
                     <!-- Project Card -->
             <div class="project-card">
-                <img src="about-2.jpg" width="100%" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                <p>Technologies used: HTML, CSS, JavaScript</p>
-                <a href="#">View Project ↗</a>
+                <img src="project4.png" width="100%" alt="Project 1">
+                <h3>Xiamo Clone</h3>
+                <p>A static & responsive E-commerce with clean design and smooth user experience</p>
+                <p><span>Technologies used: HTML, CSS, Bootstrap</span></p>
+                <a href="https://xiaomi-website-indol.vercel.app/" target="_blank">View Project ↗</a>
             </div>
 
         </div>
@@ -195,7 +197,7 @@
 
 
 
-    <section class="services-section">
+    <section class="services-section" id="services">
 
         <!-- SERVICE CARD 1 -->
         <div class="service-card">
@@ -267,7 +269,7 @@
     </section>
 
 
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
         <section class="hire-section">
             <div class="hire-card">
                 <h2>Let's Work Together!</h2>
@@ -285,7 +287,7 @@
                 </p>
             </div>
             <div class="img">
-                <img src="contact-shape.png"  width="600px" alt="Contact Shape">
+                <img src="contact-shape.webp"  width="600px" alt="Contact Shape">
             </div>
         </section>
     </section>
@@ -317,7 +319,12 @@
 <script>
     AOS.init({
     duration: 1200,  
-    once: true      
+    once: false      
+    });
+    const contactBtn = document.getElementById('contact-btn');
+    const contactSection = document.querySelector('.contact-section');
+    contactBtn.addEventListener('click', (e) => {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
     });
 </script>
 
