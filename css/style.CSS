@@ -132,28 +132,35 @@ body {
     align-items: center;
     pointer-events: none;
     opacity: 0.3;
-    margin-top: 5%;
+    margin-top: 8%;
+    overflow: hidden;
 }
 
 .ring {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border: 1px solid #fff;
     border-radius: 50%;
     animation: pulse 6s ease-in-out infinite;
 }
 
 .ring:nth-child(2) {
-    width: 400px;
-    height: 400px;
+    width: 360px;
+    height: 360px;
     animation-delay: -1.5s;
 }
 
 .ring:nth-child(3) {
-    width: 600px;
-    height: 600px;
+    width: 540px;
+    height: 540px;
     animation-delay: -3s;
+}
+
+.ring:nth-child(4) {
+    width: 720px;
+    height: 720px;
+    animation-delay: -4.5s;
 }
 
 .shapes-container {
@@ -186,11 +193,11 @@ body {
     display: flex;
     justify-content: center;
     z-index: 999;
-    padding: 15px 0;
+    padding: 15px 10px;
 }
 
 .navbar {
-    width: 100%;
+    width: 95%;
     max-width: 1200px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid var(--color-glass-border);
@@ -530,10 +537,12 @@ header .group {
 }
 
 .projects-grid {
-    width: 60%;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -808,6 +817,42 @@ header .group {
 
 /* ================= RESPONSIVE DESIGN ================= */
 
+/* Extra Large Screens */
+@media (min-width: 1400px) {
+    .navbar {
+        max-width: 1400px;
+    }
+
+    header h1 {
+        font-size: 56px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1400px;
+    }
+
+    .rings {
+        margin-top: 6%;
+    }
+}
+
+/* Large Desktop */
+@media (max-width: 1200px) {
+    .box {
+        width: 70%;
+    }
+
+    .projects-grid {
+        width: 85%;
+    }
+
+    .service-card {
+        max-width: 1000px;
+        padding: 40px 20px;
+    }
+}
+
 /* Large Tablet */
 @media (max-width: 1100px) {
     .box {
@@ -817,6 +862,11 @@ header .group {
 
     .box-content {
         min-height: 200px;
+    }
+
+    .projects-grid {
+        width: 90%;
+        gap: 1.5rem;
     }
 
     .hire-section {
@@ -833,12 +883,37 @@ header .group {
         max-width: 450px;
         margin: 0 auto;
     }
+
+    .rings {
+        margin-top: 10%;
+    }
+
+    .ring {
+        width: 150px;
+        height: 150px;
+    }
+
+    .ring:nth-child(2) {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ring:nth-child(3) {
+        width: 450px;
+        height: 450px;
+    }
+
+    .ring:nth-child(4) {
+        width: 600px;
+        height: 600px;
+    }
 }
 
 /* Tablet */
 @media (max-width: 900px) {
     .navbar {
         padding: 10px 15px;
+        width: 92%;
     }
 
     .navbar nav a {
@@ -881,17 +956,23 @@ header .group {
     }
 
     .box {
+        width: 90%;
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
             "box1 box1"
             "box2 box2"
             "box3 box4"
             "box5 box5";
-        grid-auto-rows: minmax(240px, auto);
+        grid-auto-rows: minmax(220px, auto);
     }
 
     .box-content {
-        min-height: 240px;
+        min-height: 220px;
+    }
+
+    .projects-grid {
+        width: 92%;
+        padding: 0 15px;
     }
 
     .cloud-icon {
@@ -907,15 +988,22 @@ header .group {
     .service-card {
         flex-direction: column;
         text-align: center;
+        padding: 30px 20px;
     }
 
     .service-right {
-        width: 95%;
+        width: 90%;
+        max-width: 500px;
         height: 300px;
+    }
+
+    .service-left h2 {
+        font-size: 36px;
     }
 
     .service-left p {
         margin: 0 auto;
+        max-width: 500px;
     }
 
     .hire-card {
@@ -929,13 +1017,47 @@ header .group {
     .hire-card p {
         font-size: 16px;
     }
+
+    .rings {
+        margin-top: 12%;
+    }
+
+    .ring {
+        width: 120px;
+        height: 120px;
+    }
+
+    .ring:nth-child(2) {
+        width: 240px;
+        height: 240px;
+    }
+
+    .ring:nth-child(3) {
+        width: 360px;
+        height: 360px;
+    }
+
+    .ring:nth-child(4) {
+        width: 480px;
+        height: 480px;
+    }
 }
 
 /* Small Tablet */
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        width: 95%;
+        width: 90%;
+        max-width: 500px;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .projects-title {
+        font-size: 32px;
     }
 }
 
@@ -943,12 +1065,74 @@ header .group {
 @media (max-width: 700px) {
     .navbar {
         padding: 8px 12px;
+        width: 90%;
     }
 
+    .navbar nav a {
+        font-size: 13px;
+        margin: 0 6px;
+    }
 
+    .navbar .logo h2 {
+        font-size: 18px;
+    }
+
+    .navbar .contact {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    header {
+        margin-top: 20%;
+        padding: 0 18px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
 
     .contact-section .img img {
+        width: 280px;
+    }
+
+    .service-left h2 {
+        font-size: 32px;
+    }
+
+    .service-left p {
+        font-size: 16px;
+    }
+
+    .glass-box {
+        padding: 30px 20px;
+    }
+
+    .glass-box img {
+        max-width: 150px;
+    }
+
+    .rings {
+        margin-top: 15%;
+    }
+
+    .ring {
+        width: 100px;
+        height: 100px;
+    }
+
+    .ring:nth-child(2) {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ring:nth-child(3) {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ring:nth-child(4) {
         width: 400px;
+        height: 400px;
     }
 }
 
@@ -958,14 +1142,13 @@ header .group {
         margin-top: 24%;
         padding: 0 15px;
     }
-    .shapes-container img{
-        width: 100px;
+
+    .shapes-container img {
+        width: 80px;
     }
-    .rings {
-        display: none;
-    }
+
     header h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     header h3 {
@@ -977,7 +1160,18 @@ header .group {
     }
 
     header .header-img img {
-        width: 350px;
+        width: 300px;
+        max-width: 90vw;
+    }
+
+    button {
+        padding: 10px 24px;
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 12px 24px;
+        font-size: 0.9rem;
     }
 
     .box {
@@ -988,12 +1182,62 @@ header .group {
             "box3"
             "box4"
             "box5";
-        width: 95%;
-        grid-auto-rows: minmax(260px, auto);
+        width: 92%;
+        grid-auto-rows: minmax(240px, auto);
     }
 
     .box-content {
-        min-height: 260px;
+        min-height: 240px;
+        padding: 18px;
+    }
+
+    .about .box-1 h1 {
+        font-size: 20px;
+    }
+
+    .about .box-1 p {
+        font-size: 14px;
+    }
+
+    .about .box-1 img {
+        width: 100px;
+    }
+
+    .small-card {
+        font-size: 14px;
+    }
+
+    .small-card i {
+        font-size: 16px;
+    }
+
+    .projects-grid {
+        width: 92%;
+        padding: 0 10px;
+        gap: 1.2rem;
+    }
+
+    .projects-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .project-card {
+        padding: 1.2rem;
+    }
+
+    .project-card h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .project-card p {
+        font-size: 14px;
+    }
+
+    .project-card a {
+        padding: 8px 18px;
+        font-size: 14px;
     }
 
     .cloud-icon {
@@ -1014,6 +1258,132 @@ header .group {
     .i6 { left: 38%; top: 70%; }
     .i7 { left: 58%; top: 58%; }
     .i8 { left: 82%; top: 50%; }
+
+    .service-card {
+        padding: 20px 15px;
+        margin-bottom: 60px;
+    }
+
+    .service-left h2 {
+        font-size: 28px;
+    }
+
+    .service-left p {
+        font-size: 15px;
+    }
+
+    .service-right {
+        width: 95%;
+        height: 280px;
+    }
+
+    .glass-box {
+        padding: 25px 15px;
+    }
+
+    .glass-box h3 {
+        font-size: 18px;
+    }
+
+    .glass-box p {
+        font-size: 14px;
+    }
+
+    .glass-box img {
+        max-width: 130px;
+    }
+
+    .hire-card {
+        padding: 30px 18px;
+    }
+
+    .hire-card h2 {
+        font-size: 28px;
+    }
+
+    .hire-card p {
+        font-size: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .contact-section .img img {
+        width: 220px;
+        max-width: 85vw;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+    .navbar {
+        padding: 8px 10px;
+    }
+
+    .navbar .logo h2 {
+        font-size: 16px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+        margin: 0 4px;
+    }
+
+    .navbar .contact {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+
+    header {
+        margin-top: 28%;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header h3 {
+        font-size: 16px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    header .header-img img {
+        width: 250px;
+    }
+
+    .shapes-container img {
+        width: 60px;
+    }
+
+    .box {
+        width: 95%;
+    }
+
+    .projects-grid {
+        width: 95%;
+    }
+
+    .projects-title {
+        font-size: 24px;
+    }
+
+    .service-left h2 {
+        font-size: 24px;
+    }
+
+    .hire-card h2 {
+        font-size: 24px;
+    }
+
+    .rings {
+        opacity: 0.2;
+    }
 }
 
 /* Accessibility */
